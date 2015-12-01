@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="megabaeckerei.control.gui.Controller">
+   <children>
+      <ImageView fitHeight="100.0" fitWidth="88.0" layoutX="94.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="watercontainer.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="bLagerToWater" layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#bLagerToWaterClick" text="From Lager" />
+      <Button fx:id="bWaterToMischer" layoutX="182.0" layoutY="87.0" mnemonicParsing="false" onAction="#bWaterToMischerClick" text="To Mischer" />
+      <Label fx:id="labelLevelWater" layoutX="70.0" layoutY="36.0" prefHeight="17.0" prefWidth="129.0" text="Level" />
+   </children>
+</Pane>
