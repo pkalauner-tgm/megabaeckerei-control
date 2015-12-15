@@ -37,12 +37,18 @@ public class SocketHandler extends Thread{
             this.clientMap.put(type, ct);
             System.out.println("Client identified: " + name);
 
-            ct.sendCommand("get_level");
+            switch (type) {
+                case OVEN:
+                    ct.sendCommand("get_temperature\0");
+                    break;
+                default:
+                    ct.sendCommand("get_level");
+            }
+
         } catch (IllegalArgumentException iae) {
             System.out.println("No CLient type with name " + name);
         }
     }
-
     public void sendToSocket(ClientType type, String cmd) {
         ClientThread client = clientMap.get(type);
         if (client != null)
