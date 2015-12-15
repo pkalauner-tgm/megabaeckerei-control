@@ -20,7 +20,7 @@ public class ClientThread extends Thread {
     private BufferedReader in;
 
     public ClientThread(SocketHandler sh, Socket socket) {
-        System.out.println("New Client connected");
+        System.out.println("New Client connected: " + socket.getInetAddress());
         this.sh = sh;
         this.socket = socket;
         this.initIO();
