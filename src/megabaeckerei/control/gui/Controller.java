@@ -37,7 +37,4 @@ public class Controller {
         this.sh = sh;
     }
 
-    public void test() {
-        System.out.println("bla");
-    }
 }

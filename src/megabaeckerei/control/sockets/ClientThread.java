@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.SocketException;
 
 /**
  * Created by Paul on 01.12.15.
@@ -73,6 +74,8 @@ public class ClientThread extends Thread {
                 this.handleCommand(inputLine);
             }
             socket.close();
+        } catch (SocketException se) {
+            System.out.println("Client disconnected");
         } catch (Exception e) {
             e.printStackTrace();
         }

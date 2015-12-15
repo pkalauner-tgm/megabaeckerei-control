@@ -22,10 +22,9 @@ public class SocketHandler extends Thread{
 
     @Override
     public void run() {
-        System.out.println("Init ServerSocket");
         try {
             this.serverSocket = new ServerSocket(12345);
-            for (int i = 0; i < 4; i++) {
+            while (true) {
                 new ClientThread(this, serverSocket.accept()).start();
             }
         } catch (IOException e) {
