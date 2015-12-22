@@ -14,12 +14,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("layout.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/layout.fxml"));
         Parent root = fxmlLoader.load();
         controller = fxmlLoader.getController();
         initSocketHandler();
         primaryStage.setTitle("MegaBaeckerei Control");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 758, 301));
         primaryStage.setResizable(false);
         primaryStage.show();
         primaryStage.setOnHiding(event -> Platform.runLater(() -> System.exit(0)));

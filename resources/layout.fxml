@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="301.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="megabaeckerei.control.gui.Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="175.0" layoutY="224.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="175.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" width="129.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="103.0" layoutX="297.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" width="8.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="301.0" layoutY="181.0" stroke="BLACK" strokeType="INSIDE" width="97.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="7.0" layoutX="442.0" layoutY="181.0" stroke="BLACK" strokeType="INSIDE" width="247.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="67.0" layoutX="681.0" layoutY="121.0" stroke="BLACK" strokeType="INSIDE" width="8.0" />
+      <ImageView fitHeight="100.0" fitWidth="88.0" layoutX="94.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/watercontainer.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="bLagerToWater" layoutX="14.0" layoutY="69.0" mnemonicParsing="false" onAction="#bLagerToWaterClick" text="From Lager" />
+      <Button fx:id="bWaterToMischer" layoutX="202.0" layoutY="102.0" mnemonicParsing="false" onAction="#bWaterToMischerClick" prefHeight="25.0" prefWidth="88.0" text="To Mischer" />
+      <Label fx:id="labelLevelWater" layoutX="94.0" layoutY="36.0" prefHeight="17.0" prefWidth="88.0" text="Level" />
+      <Label fx:id="labelLevelMixer" layoutX="385.0" layoutY="127.0" prefHeight="17.0" prefWidth="60.0" text="Level" />
+      <Button fx:id="bToOven" layoutX="505.0" layoutY="189.0" mnemonicParsing="false" onAction="#bMixerToOvenClick" text="To Oven" />
+      <ImageView fitHeight="100.0" fitWidth="88.0" layoutX="361.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/mixer.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelTemperatureOven" layoutX="639.0" layoutY="36.0" prefHeight="17.0" prefWidth="88.0" text="Temperature" />
+      <ImageView fitHeight="100.0" fitWidth="88.0" layoutX="639.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/oven.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelLevelMixtank" layoutX="94.0" layoutY="193.0" prefHeight="17.0" prefWidth="88.0" text="Level" />
+      <Button fx:id="bMixToMischer" layoutX="202.0" layoutY="231.0" mnemonicParsing="false" onAction="#bMixToMixerClick" prefHeight="25.0" prefWidth="88.0" text="To Mischer" />
+      <Button fx:id="bLagerToMix" layoutX="13.0" layoutY="226.0" mnemonicParsing="false" onAction="#bLagerToMixClick" text="From Lager" />
+      <ImageView fitHeight="100.0" fitWidth="88.0" layoutX="93.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/bakemix.jpg" />
+         </image>
+      </ImageView>
+      <Slider fx:id="temperatureSlider" layoutX="615.0" layoutY="69.0" orientation="VERTICAL" prefHeight="76.0" prefWidth="14.0" />
+      <Label fx:id="labelSliderTemp" layoutX="581.0" layoutY="106.0" prefHeight="17.0" prefWidth="34.0" text="Temp" />
+   </children>
+</Pane>
