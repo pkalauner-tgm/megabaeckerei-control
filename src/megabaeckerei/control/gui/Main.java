@@ -19,7 +19,7 @@ public class Main extends Application {
         controller = fxmlLoader.getController();
         initSocketHandler();
         primaryStage.setTitle("MegaBaeckerei Control");
-        primaryStage.setScene(new Scene(root, 758, 301));
+        primaryStage.setScene(new Scene(root, 813, 311));
         primaryStage.setResizable(false);
         primaryStage.show();
         primaryStage.setOnHiding(event -> Platform.runLater(() -> System.exit(0)));

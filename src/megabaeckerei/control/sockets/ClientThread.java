@@ -18,6 +18,7 @@ public class ClientThread extends Thread {
     private SocketHandler sh;
     private PrintWriter out;
     private BufferedReader in;
+    private ClientType type;
 
     public ClientThread(SocketHandler sh, Socket socket) {
         System.out.println("New Client connected: " + socket.getInetAddress());
@@ -48,7 +49,7 @@ public class ClientThread extends Thread {
 
             switch (cmd) {
                 case "identify":
-                    sh.identifyCallback(value, this);
+                    this.type = sh.identifyCallback(value, this);
                     break;
                 case "level_water":
                     Platform.runLater(() -> sh.controller.updateLevelWater(Integer.parseInt(value)));
@@ -75,9 +76,28 @@ public class ClientThread extends Thread {
             }
             socket.close();
         } catch (SocketException se) {
-            System.out.println("Client disconnected");
+            handleDisconnect();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void handleDisconnect() {
+        switch (type) {
+            case WATERTANK:
+                sh.controller.changeLabelWater(false);
+                break;
+            case MIXTANK:
+                sh.controller.changeLabelMixture(false);
+                break;
+            case MIXER:
+                sh.controller.changeLabelMixer(false);
+                break;
+            case OVEN:
+                sh.controller.changeLabelOven(false);
+                break;
+
+        }
+        System.out.println("Client " + this.type + " disconnected");
     }
 }
