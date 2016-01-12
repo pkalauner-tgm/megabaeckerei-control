@@ -36,7 +36,7 @@
          </image>
       </ImageView>
       <Label fx:id="labelLevelMixtank" layoutX="81.0" layoutY="193.0" prefHeight="17.0" prefWidth="116.0" text="Level" />
-      <Button fx:id="bMixToMischer" disable="true" layoutX="202.0" layoutY="231.0" mnemonicParsing="false" onAction="#bMixToMixerClick" prefHeight="25.0" prefWidth="88.0" text="To Mischer" />
+      <Button fx:id="bMixToMixer" disable="true" layoutX="202.0" layoutY="231.0" mnemonicParsing="false" onAction="#bMixToMixerClick" prefHeight="25.0" prefWidth="88.0" text="To Mischer" />
       <Button fx:id="bLagerToMix" disable="true" layoutX="13.0" layoutY="226.0" mnemonicParsing="false" onAction="#bLagerToMixClick" text="From Lager" />
       <ImageView fitHeight="100.0" fitWidth="88.0" layoutX="93.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
          <image>

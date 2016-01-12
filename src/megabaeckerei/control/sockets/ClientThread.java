@@ -57,8 +57,14 @@ public class ClientThread extends Thread {
                 case "water_to_mischer":
                     sh.sendToSocket(ClientType.MIXER, "add_water " + value);
                     break;
+                case "mixtank_to_mixer":
+                    sh.sendToSocket(ClientType.MIXER, "add_mix " + value);
+                    break;
+                case "level_mixtank":
+                    Platform.runLater(() -> sh.controller.updateLevelMixtank(Integer.parseInt(value)));
+                    break;
                 default:
-                    System.out.println("Invalid command");
+                    System.out.println("Invalid command: " + cmd);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

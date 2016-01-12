@@ -62,10 +62,14 @@ public class Controller {
         this.labelLevelWater.setText("Level: " + newLevel + "/" + Values.MAX_LEVEL_WATER);
     }
 
+    public void updateLevelMixtank(int newLevel) {
+        this.labelLevelMixtank.setText("Level: " + newLevel + "/" + Values.MAX_LEVEL_WATER);
+    }
+
 
     public void changeLabelMixture(boolean connected) {
-            bLagerToMix.setDisable(!connected);
-            bMixToMixer.setDisable(!connected);
+        bLagerToMix.setDisable(!connected);
+        bMixToMixer.setDisable(!connected);
         this.changeLabel(labelMixtureStatus, connected);
     }
 
@@ -118,9 +122,11 @@ public class Controller {
 
     @FXML
     public void bMixToMixerClick(ActionEvent e) {
+        sh.sendToSocket(ClientType.MIXTANK, "toggle_mixtank_to_mixer_ventil");
     }
 
     @FXML
     public void bLagerToMixClick(ActionEvent e) {
+        sh.sendToSocket(ClientType.MIXTANK, "toggle_lager_to_mixtank_ventil");
     }
 }
