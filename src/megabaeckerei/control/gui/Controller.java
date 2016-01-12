@@ -63,7 +63,11 @@ public class Controller {
     }
 
     public void updateLevelMixtank(int newLevel) {
-        this.labelLevelMixtank.setText("Level: " + newLevel + "/" + Values.MAX_LEVEL_WATER);
+        this.labelLevelMixtank.setText("Level: " + newLevel + "/" + Values.MAX_LEVEL_MIXTANK);
+    }
+
+    public void updateLevelMixer(int newLevel) {
+        this.labelLevelMixer.setText("Level: " + newLevel + "/" + Values.MAX_LEVEL_MIXER);
     }
 
 
@@ -118,6 +122,7 @@ public class Controller {
 
     @FXML
     public void bMixerToOvenClick(ActionEvent e) {
+        sh.sendToSocket(ClientType.MIXER, "toggle_mixer_to_oven_ventil");
     }
 
     @FXML
