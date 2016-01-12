@@ -27,11 +27,13 @@ public class Controller {
     @FXML
     private Button bMixerToOven;
     @FXML
+    private Button bTakeBread;
+    @FXML
     private Label labelLevelWater;
     @FXML
     private Label labelLevelMixer;
     @FXML
-    private Label labelTemperatureOven;
+    private Label labelLevelOven;
     @FXML
     private Label labelLevelMixtank;
     @FXML
@@ -51,9 +53,8 @@ public class Controller {
         temperatureSlider.valueChangingProperty().addListener((obs, wasChanging, isNowChanging) -> {
             if (!isNowChanging) {
                 int newVal = (int) temperatureSlider.getValue();
-                labelSliderTemp.setText(String.valueOf(newVal));
-                labelTemperatureOven.setText("Temperature: " + newVal);
-                sh.sendToSocket(ClientType.OVEN, "set_temperature " + newVal);
+                labelSliderTemp.setText("Temperature: " + newVal + "\u00b0 C");
+                // sh.sendToSocket(ClientType.OVEN, "set_temperature " + newVal);
             }
         });
     }
@@ -68,6 +69,10 @@ public class Controller {
 
     public void updateLevelMixer(int newLevel) {
         this.labelLevelMixer.setText("Level: " + newLevel + "/" + Values.MAX_LEVEL_MIXER);
+    }
+
+    public void updateLevelOven(int newLevel) {
+        this.labelLevelOven.setText("Level: " + newLevel + "/" + Values.MAX_LEVEL_OVEN);
     }
 
 
@@ -90,6 +95,9 @@ public class Controller {
 
     public void changeLabelOven(boolean connected) {
         temperatureSlider.setDisable(!connected);
+        bTakeBread.setDisable(!connected);
+        if (connected)
+            Platform.runLater(() -> labelSliderTemp.setText("Temperature: " + 0 + "\u00b0 C"));
         this.changeLabel(labelOvenStatus, connected);
     }
 
@@ -133,5 +141,10 @@ public class Controller {
     @FXML
     public void bLagerToMixClick(ActionEvent e) {
         sh.sendToSocket(ClientType.MIXTANK, "toggle_lager_to_mixtank_ventil");
+    }
+
+    @FXML
+    public void bTakeBreadClick(ActionEvent e) {
+        sh.sendToSocket(ClientType.OVEN, "take_bread");
     }
 }

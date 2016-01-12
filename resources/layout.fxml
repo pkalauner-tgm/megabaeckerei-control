@@ -29,7 +29,7 @@
             <Image url="@images/mixer.png" />
          </image>
       </ImageView>
-      <Label fx:id="labelTemperatureOven" layoutX="615.0" layoutY="36.0" prefHeight="17.0" prefWidth="129.0" text="Temperature" />
+      <Label fx:id="labelLevelOven" layoutX="615.0" layoutY="36.0" prefHeight="17.0" prefWidth="129.0" text="Level" />
       <ImageView fitHeight="100.0" fitWidth="88.0" layoutX="639.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/oven.png" />
@@ -44,10 +44,11 @@
          </image>
       </ImageView>
       <Slider fx:id="temperatureSlider" disable="true" layoutX="615.0" layoutY="69.0" max="600.0" orientation="VERTICAL" prefHeight="76.0" prefWidth="14.0" />
-      <Label fx:id="labelSliderTemp" layoutX="581.0" layoutY="106.0" prefHeight="17.0" prefWidth="34.0" text="0" />
+      <Label fx:id="labelSliderTemp" layoutX="614.0" layoutY="21.0" prefHeight="17.0" prefWidth="116.0" text="Temperature" />
       <Label fx:id="labelMixtureStatus" alignment="CENTER" layoutX="101.0" layoutY="277.0" prefHeight="17.0" prefWidth="76.0" text="Disconnected" textAlignment="CENTER" textFill="RED" />
       <Label fx:id="labelWaterStatus" alignment="CENTER" layoutX="99.0" layoutY="152.0" prefHeight="17.0" prefWidth="76.0" text="Disconnected" textAlignment="CENTER" textFill="RED" />
       <Label fx:id="labelMixerStatus" alignment="CENTER" layoutX="361.0" layoutY="216.0" prefHeight="17.0" prefWidth="88.0" text="Disconnected" textAlignment="CENTER" textFill="RED" />
       <Label fx:id="labelOvenStatus" layoutX="732.0" layoutY="99.0" prefHeight="17.0" prefWidth="76.0" text="Disconnected" textFill="RED" />
+      <Button fx:id="bTakeBread" layoutX="733.0" layoutY="69.0" mnemonicParsing="false" onAction="#bTakeBreadClick" text="Take Bread" />
    </children>
 </Pane>

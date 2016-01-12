@@ -52,7 +52,7 @@ public class SocketHandler extends Thread{
                     break;
                 case OVEN:
                     controller.changeLabelOven(true);
-                    ct.sendCommand("get_temperature\0");
+                    ct.sendCommand("get_level");
                     break;
                 default:
                     ct.sendCommand("get_level");
